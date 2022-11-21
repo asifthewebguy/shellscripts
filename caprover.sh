@@ -8,9 +8,9 @@
 # requires root access to create override file
 
 # get ip address as variable from user input
-# read -p "Enter your server's IP address: " IP_ADDRESS
-echo "Your server's IP address is:"
-read IP_ADDRESS
+read -n -p "Enter your server's IP address: " IP_ADDRESS
+# echo "Your server's IP address is:"
+# read IP_ADDRESS
 # if input is empty, set 192.168.0.205 as default
 if [ -z "$IP_ADDRESS" ]; then
     IP_ADDRESS="192.168.0.205"
