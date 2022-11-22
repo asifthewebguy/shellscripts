@@ -9,12 +9,17 @@
 
 # get ip address as variable from user input
 # read -p "Enter your server's IP address: " IP_ADDRESS
-echo -n "Your server's IP address is:"
-read IP_ADDRESS
+# echo -n "Your server's IP address is:"
+# read IP_ADDRESS
 # if input is empty, set 192.168.0.205 as default
-if [ -z "$IP_ADDRESS" ]; then
-    IP_ADDRESS="192.168.0.205"
-fi
+# if [ -z "$IP_ADDRESS" ]; then
+#     IP_ADDRESS="192.168.0.205"
+# fi
+# get device ip address
+IP_ADDRESS=$(hostname -I | awk '{print $1}')
+
+# print ip address
+echo "Your server's IP address is: $IP_ADDRESS"
 
 # if ip address is private ip, set configure override
 if [[ $IP_ADDRESS =~ ^192\.168\.0\.[0-9]{1,3}$ ]]; then
