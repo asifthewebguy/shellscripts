@@ -28,6 +28,22 @@ else
     CONFIGURE_OVERRIDE="false"
 fi
 
+# check if docker is installed
+if ! [ -x "$(command -v docker)" ]; then
+    echo 'Error: docker is not installed.' >&2
+    # ask user if they want to install docker
+    read -p "Do you want to install docker? [y/n] " INSTALL_DOCKER
+    # if user input is y, install docker
+    if [ "$INSTALL_DOCKER" = "y" ]; then
+        # install docker
+        wget -O - https://raw.githubusercontent.com/asifthewebguy/ubuntu-server-setup/master/docker.sh
+    else
+        echo "Please install docker and run this script again."
+        exit 1
+    fi
+    exit 1
+fi
+
 # if configure override is true, then scip domain verification and install caprover with private ip address
 if [ "$CONFIGURE_OVERRIDE" = "true" ]; then
     # setting up override
