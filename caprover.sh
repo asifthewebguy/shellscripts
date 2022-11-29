@@ -29,8 +29,10 @@ else
 fi
 
 # check if docker is installed
+# if not, install docker
+
 if ! [ -x "$(command -v docker)" ]; then
-    echo 'Error: docker is not installed.' >&2
+    echo 'Error: docker is not installed.'
     # ask user if they want to install docker
     read -p "Do you want to install docker? [y/n] " INSTALL_DOCKER
     # if user input is y, install docker
@@ -56,3 +58,5 @@ else
     # installing caprover
     docker run -p 80:80 -p 443:443 -p 3000:3000 -v /var/run/docker.sock:/var/run/docker.sock -v /captain:/captain caprover/caprover
 fi
+
+# check if caprover is installed
