@@ -40,7 +40,7 @@ if ! [ -x "$(command -v docker)" ]; then
     echo "Do you want to install docker? [y/n]"
     read INSTALL_DOCKER
     # if user input is y, install docker
-    if [ "$INSTALL_DOCKER" = "y" ]; then
+    if [ "$INSTALL_DOCKER" === "y" ]; then
         # install docker
         wget -O - https://raw.githubusercontent.com/asifthewebguy/ubuntu-server-setup/master/docker.sh
     else
