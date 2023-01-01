@@ -43,7 +43,6 @@ if ! [ -x "$(command -v docker)" ]; then
     # if user input is y, install docker
     if [ "$INSTALL_DOCKER" == "y" ]; then
         # install docker
-
         sh -c "$(wget -O - https://raw.githubusercontent.com/asifthewebguy/shellscripts/main/docker.sh)"
     else
         echo "Please install docker and run this script again."
@@ -53,11 +52,11 @@ if ! [ -x "$(command -v docker)" ]; then
 fi
 
 # if configure override is true, then scip domain verification and install caprover with private ip address
-if [ "$CONFIGURE_OVERRIDE" = "true" ]; then
+if [ "$CONFIGURE_OVERRIDE" == "true" ]; then
     # setting up override
     sudo mkdir /captain && sudo mkdir /captain/data/ && sudo touch /captain/data/config-override.json
     # adding override to config-override.json
-    echo  "{\"skipVerifyingDomains\":\"true\"}" >  /captain/data/config-override.json
+    sud echo  "{\"skipVerifyingDomains\":\"true\"}" >  /captain/data/config-override.json
     # installing caprover
     docker run -e MAIN_NODE_IP_ADDRESS=$IP_ADDRESS -p 80:80 -p 443:443 -p 3000:3000 -v /var/run/docker.sock:/var/run/docker.sock -v /captain:/captain caprover/caprover
 else
