@@ -31,6 +31,7 @@ fi
 # check if docker is installed
 # if not, install docker
 
+
 if ! [ -x "$(command -v docker)" ]; then
     echo 'Error: docker is not installed.'
     # echo 'Please install docker and run this script again.'
