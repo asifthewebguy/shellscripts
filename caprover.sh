@@ -33,6 +33,9 @@ fi
 
 if ! [ -x "$(command -v docker)" ]; then
     echo 'Error: docker is not installed.'
+    echo 'Please install docker and run this script again.'
+    echo 'To install docker, run this command: wget -O - https://raw.githubusercontent.com/asifthewebguy/ubuntu-server-setup/master/docker.sh | bash'
+
     # ask user if they want to install docker
     read -p "Do you want to install docker? [y/n] " INSTALL_DOCKER
     # if user input is y, install docker
