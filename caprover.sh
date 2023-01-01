@@ -42,7 +42,8 @@ if ! [ -x "$(command -v docker)" ]; then
     # if user input is y, install docker
     if [ "$INSTALL_DOCKER" == "y" ]; then
         # install docker
-        wget -O - https://raw.githubusercontent.com/asifthewebguy/shellscripts/main/docker.sh
+
+        sh -c "$(wget -O - https://raw.githubusercontent.com/asifthewebguy/shellscripts/main/docker.sh)"
     else
         echo "Please install docker and run this script again."
         exit 1
