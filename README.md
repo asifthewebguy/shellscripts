@@ -2,11 +2,11 @@
 
 ## Install Docker
 ### with wget
-`wget -O - https://raw.githubusercontent.com/asifthewebguy/ubuntu-server-setup/master/docker.sh | bash`
+`wget -O - https://raw.githubusercontent.com/asifthewebguy/shellscripts/main/docker.sh | bash`
 ### with curl
-`curl -s https://raw.githubusercontent.com/asifthewebguy/ubuntu-server-setup/master/docker.sh | bash`
+`curl -s https://raw.githubusercontent.com/asifthewebguy/shellscripts/main/docker.sh | bash`
 ## Install Caprover
 ### with wget
-`wget -O - https://raw.githubusercontent.com/asifthewebguy/ubuntu-server-setup/master/caprover.sh | bash`
+`wget -O - https://raw.githubusercontent.com/asifthewebguy/shellscripts/main/caprover.sh | bash`
 ### with curl
-`curl -s https://raw.githubusercontent.com/asifthewebguy/ubuntu-server-setup/master/caprover.sh | bash`
+`curl -s https://raw.githubusercontent.com/asifthewebguy/shellscripts/main/caprover.sh | bash`
