@@ -56,7 +56,7 @@ if [ "$CONFIGURE_OVERRIDE" == "true" ]; then
     # setting up override
     sudo mkdir /captain && sudo mkdir /captain/data/ && sudo touch /captain/data/config-override.json
     # adding override to config-override.json
-    sudo echo  "{\"skipVerifyingDomains\":\"true\"}" >  /captain/data/config-override.json
+    echo  "{\"skipVerifyingDomains\":\"true\"}" | sudo tee  /captain/data/config-override.json
     # installing caprover
     docker run -e MAIN_NODE_IP_ADDRESS=$IP_ADDRESS -p 80:80 -p 443:443 -p 3000:3000 -v /var/run/docker.sock:/var/run/docker.sock -v /captain:/captain caprover/caprover
 else
